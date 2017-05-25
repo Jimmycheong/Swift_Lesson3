@@ -17,7 +17,7 @@ class ZipCodeFieldDelegate : NSObject, UITextFieldDelegate {
         var newText = textField.text! as NSString
         newText = newText.replacingCharacters(in: range, with: string) as NSString
   
-        if newText.length <= 5 {
+        if newText.length <= 9 {
         
             return true
             

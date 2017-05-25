@@ -26,26 +26,21 @@ class cashFieldDelegate : NSObject, UITextFieldDelegate {
         
         if pennies == "$0.00" {
         
-            print("nexttext.length: ")
+            print("newText.length: " + String(newText.length))
             
-            let index = pennies.index(pennies.startIndex, offsetBy: newText.length - 1)
+            let index = pennies.index(pennies.startIndex, offsetBy: newText.length - 2)
             pennies = pennies.substring(to: index)
-            print("It works!")
             print("Pennies: " + pennies)
             
-            textField.text = pennies
-        
         } else {
-        
-            print("nothing")
+            print("Pennies is now:" + pennies)
+
+            let index2 = pennies.index(pennies.startIndex, offsetBy: 1)
+            pennies = pennies.substring(from: index2)
+            
+            
         }
-        
-        //
-//        let index = pennies.index(pennies.startIndex, offsetBy: 1)
-//        let result = pennies.substring(from: index)
-//        
-//        textField.text = "$" + result
-//        return true
+        textField.text = pennies
      
         return true
     }
