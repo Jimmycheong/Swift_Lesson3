@@ -8,18 +8,46 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
+    // MARK: Variables 
+    
+    @IBOutlet weak var zipField: UITextField!
+    @IBOutlet weak var cashField: UITextField!
+    @IBOutlet weak var lockTextField: UITextField!
+    @IBOutlet weak var switchButton: UISwitch!
+
+    // MARK : Delegates
+    
+    let zipDelegate = ZipCodeFieldDelegate()
+    let cashDelegate = cashFieldDelegate()
+    
+    
+    // MARK: Life Cycles
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+        self.zipField.delegate = zipDelegate
+        self.cashField.delegate = cashDelegate
+        self.lockTextField.delegate = self
+    
+    }
+    
+    @IBAction func switchAction(_ sender: Any) {
+        
+        if switchButton.isOn == false {
+            lockTextField.resignFirstResponder()
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+     
+        if switchButton.isOn == false {
+            return false
+        }
+        return true
     }
-
 
 }
 
