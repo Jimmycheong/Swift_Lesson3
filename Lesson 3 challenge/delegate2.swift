@@ -19,24 +19,22 @@ class cashFieldDelegate : NSObject, UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        
-        pennies = (textField.text)!
-        var newText = pennies as NSString
-        newText = newText.replacingCharacters(in: range, with: string) as NSString
+        var pennies:String = (textField.text)!
         
         if pennies == "$0.00" {
-        
-            print("newText.length: " + String(newText.length))
             
-            let index = pennies.index(pennies.startIndex, offsetBy: newText.length - 2)
+            let index = pennies.index(pennies.endIndex , offsetBy: -1)
             pennies = pennies.substring(to: index)
             print("Pennies: " + pennies)
             
         } else {
-            print("Pennies is now:" + pennies)
 
             let index2 = pennies.index(pennies.startIndex, offsetBy: 1)
             pennies = pennies.substring(from: index2)
+            
+            let penniesInt: Double? = Double(pennies)
+
+            pennies = "$" + String(penniesInt! * Double(10))
             
             
         }
