@@ -63,14 +63,22 @@
 				BF58F6C11ED4E05600F5906A /* AppDelegate.swift */,
 				BF58F6C31ED4E05600F5906A /* ViewController.swift */,
 				BF58F6C51ED4E05600F5906A /* Main.storyboard */,
-				BF58F6D31ED4E2ED00F5906A /* delegate1.swift */,
-				BF58F6D71ED500BE00F5906A /* delegate2.swift */,
-				BF58F6D51ED4F99F00F5906A /* delegate3.swift */,
 				BF58F6C81ED4E05600F5906A /* Assets.xcassets */,
+				BFF8BB851ED70E3000D29A4C /* Delegates */,
 				BF58F6CA1ED4E05600F5906A /* LaunchScreen.storyboard */,
 				BF58F6CD1ED4E05600F5906A /* Info.plist */,
 			);
 			path = "Lesson 3 challenge";
+			sourceTree = "<group>";
+		};
+		BFF8BB851ED70E3000D29A4C /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				BF58F6D31ED4E2ED00F5906A /* delegate1.swift */,
+				BF58F6D71ED500BE00F5906A /* delegate2.swift */,
+				BF58F6D51ED4F99F00F5906A /* delegate3.swift */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

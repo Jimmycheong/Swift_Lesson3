@@ -11,11 +11,15 @@ import UIKit
 
 class cashFieldDelegate : NSObject, UITextFieldDelegate {
     
+    override init(){
+        var pennies : String = "lemons"
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
 //        var newString: String
 //        newString = "$" + (textField.text)!
-//        textField.text = newString
+        textField.text = self.pennies
         return true
         
     }
